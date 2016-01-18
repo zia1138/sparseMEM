@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>A Practical Algorithm for Finding Maximal Exact Matches in Large Sequence Data Sets Using Sparse Suffix Arrays</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <link type="text/css" rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<h2>A Practical Algorithm for Finding Maximal Exact Matches in Large Sequence Data Sets Using Sparse Suffix Arrays</h2>
+
+<b>Motivation:</b> High-throughput sequencing technologies place ever increasing demands on existing algorithms for sequence analysis. Algorithms for computing maximal exact matches (MEMs) between sequences appear in two contexts where high-throughput sequencing will vastly increase the volume of sequence data: (1) seeding alignments of high-throughput reads for genome assembly and (2) designating anchor points for genome-genome comparisons.<br>
+
+<p>
+<b> Results: </b> We introduce a new algorithm for finding finding MEMs. The algorithm leverages a sparse suffix array, a text index that stores every Kth position of the text. In contrast to a full text index that stores every position of the text, a sparse suffix array occupies much less memory. Even though we use a sparse index, the output of our algorithm is the same as a full text index algorithm. By relying on partial matches and additional text scanning between indexed positions, the algorithm trades memory for extra computation. The reduced memory usage makes it possible to determine MEMs between significantly larger sequences.  <br>
+
+<h2>Paper</h2>
+
+<a href="http://www.cs.princeton.edu/~zkhan">Zia Khan</a>, Josh Bloom,
+Leonid Kruglyak, <a href ="http://www.cs.princeton.edu/~mona">Mona Singh</a>.  A Practical
+Algorithm for Finding Maximal Exact Matches in Large Sequence Data
+Sets Using Sparse Suffix Arrays. Bioinformatics 2009 25: 1609-1616.
+
+<h2>Source Code</h2>
+
+
+Source code is availible on github at <a href="https://github.com/zia1138/sparseMEM">https://github.com/zia1138/sparseMEM</a>.
+This implementation of our algorithm that can serve as a drop-in
+replacement for the suffix tree based MEMs algorithm in the popular
+<a href="http://mummer.sourceforge.net/">MUMmer 3</a> system
+
+<h2>Data</h2>
+
+Click here to <a href="test_genomes.tar.bz2">download</a> the genomes used in Table 1 and 2.
+The mouse, human, and chimp data can be downloaded from the 
+<a href="http://hgdownload.cse.ucsc.edu/downloads.html">UCSD Genome Browser Download Page</a>.
+
+There's a utility for converting from 2-bit format to text in the BLAT source code (twoBitToFa)
+ on Jim Kent's <a href="http://users.soe.ucsc.edu/~kent/src">web page</a>. Make
+sure you use the -noMask option (e.g. "./twoBitToFa -noMask genome.2bit"). 
+
+<h2>License</h2>
+
+Copyright (c) 2009, Princeton University
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    <ul>
+      <li>Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.</li>
+    <li>Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution. </li>
+    <li>Neither the name of the Princeton University nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.</li>
+    </ul>
+
+THIS SOFTWARE IS PROVIDED BY Princeton University ''AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL Princeton University BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+
+    <hr>
+    <address><a href="mailto:zkhan@princeton.edu">Zia Khan</a></address>
+<!-- Created: Wed Jan 21 12:23:41 EST 2009 -->
+<!-- hhmts start -->
+Last modified: Wed Jan 28 17:04:13 EST 2009
+<!-- hhmts end -->
+
+</body>
+</html>
